@@ -1,15 +1,16 @@
 const express =require('express');
-const res = require('express/lib/response');
 const app = express();
 
-const users = [{name:"yongsi", age : 25}];
+const users = [];
+
+app.use(express.json())
 
 app.get('/user', function(req, res){
     return res.send({users : users})
 })
 
-app.post('/user_create', function(req,res){
-    users.push({name : 'ting', age : 60});
+app.post('/user', function(req,res){
+    users.push({name :req.body.name, age :req.body.age});
     return res.send({sucess : true});
 })
 

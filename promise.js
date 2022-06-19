@@ -21,4 +21,11 @@ addSum(10,20)
         return addSum(sum1, 3)
     })
     .then((sum2)=>console.log({sum2}))
-    .catch((error) => console.log({error}))
+    .catch((error) => console.log({error}));
+
+const totalSum = async() => {
+    let sum = await addSum(10,10)
+    console.log({sum})
+}
+
+totalSum();

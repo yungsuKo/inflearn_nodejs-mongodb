@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  },
+  "name": "inflearn_mongodb",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yungsuKo/inflearn_nodejs-mongodb.git"
+  },
+  "author": "tom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yungsuKo/inflearn_nodejs-mongodb/issues"
+  },
+  "homepage": "https://github.com/yungsuKo/inflearn_nodejs-mongodb#readme"
+}

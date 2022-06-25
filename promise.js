@@ -15,13 +15,13 @@ const addSum = (a,b) => {
 
 
 
-addSum(10,20)
-    .then(sum1 => {
-        console.log({sum1});
-        return addSum(sum1, 3)
-    })
-    .then((sum2)=>console.log({sum2}))
-    .catch((error) => console.log({error}));
+// addSum(10,20)
+//     .then(sum1 => {
+//         console.log({sum1});
+//         return addSum(sum1, 3)
+//     })
+//     .then((sum2)=>console.log({sum2}))
+//     .catch((error) => console.log({error}));
 
 const totalSum = async() => {
     let sum = await addSum(10,10)

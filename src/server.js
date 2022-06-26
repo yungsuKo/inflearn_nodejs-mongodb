@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const { userRouter, blogRouter, commentRouter } = require("./routes");
-
+const { generateFakeData } = require("../faker");
 const mongoose = require("mongoose");
 
 const MONGO_URI =
@@ -13,7 +13,8 @@ const server = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    mongoose.set("debug", true);
+    // mongoose.set("debug", true);
+    await generateFakeData(100, 10, 300);
     console.log("MongoDB conneted");
     app.use(express.json());
 

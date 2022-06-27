@@ -1,10 +1,11 @@
 {
   "dependencies": {
+    "axios": "^0.27.2",
     "express": "^4.18.1",
     "faker": "^5.5.3",
     "Math": "^0.0.1-security",
     "mongoose": "^6.4.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.18"
   },
   "name": "inflearn_mongodb",
   "description": "",
@@ -12,7 +13,7 @@
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon --ignore client.js src/server.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/yungsuKo/inflearn_nodejs-mongodb#readme",
   "devDependencies": {
-    "@faker-js/faker": "^7.3.0"
+    "@faker-js/faker": "^7.3.0",
+    "nodemon": "^2.0.18"
   }
 }

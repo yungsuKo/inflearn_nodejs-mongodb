@@ -13,8 +13,8 @@ const server = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    // mongoose.set("debug", true);
-    await generateFakeData(100, 10, 300);
+    mongoose.set("debug", true);
+    // await generateFakeData(100, 10, 300);
     console.log("MongoDB conneted");
     app.use(express.json());
 

@@ -10,5 +10,14 @@ const BlogSchema = new Schema(
   { timestamps: true }
 );
 
+BlogSchema.virtual("comments", {
+  ref: "Comment",
+  localField: "_id",
+  foreignField: "blog",
+});
+
+BlogSchema.set("toObject", { virtuals: true });
+BlogSchema.set("toJson", { virtuals: true });
+
 const Blog = model("Blog", BlogSchema);
 module.exports = { Blog };

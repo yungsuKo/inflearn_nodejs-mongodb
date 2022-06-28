@@ -13,5 +13,5 @@ const CommentSchema = new Schema(
   { timestamp: true }
 );
 
-const Comment = model("Comment", CommentSchema);
+const Comment = model("comment", CommentSchema);
 module.exports = { Comment };

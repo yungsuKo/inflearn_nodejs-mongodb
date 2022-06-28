@@ -8,16 +8,16 @@ blogRouter.post("/", async (req, res) => {
   try {
     const { title, content, islive, userId } = req.body;
     if (typeof title !== "string")
-      res.status(400).send({ err: "title is required" });
+      return res.status(400).send({ err: "title is required" });
     if (typeof content !== "string")
-      res.status(400).send({ err: "content is required" });
+      return res.status(400).send({ err: "content is required" });
     // if (typeof islive !== "string")
     //   res.status(200).send({ err: "islive is required" });
     console.log(userId);
     if (!isValidObjectId(userId))
-      res.status(400).send({ err: "userId is invalid" });
+      return res.status(400).send({ err: "userId is invalid" });
     let user = await User.findById(userId);
-    if (!user) res.status(400).send({ err: "user does not exist" });
+    if (!user) return res.status(400).send({ err: "user does not exist" });
 
     let blog = new Blog({ ...req.body, user });
     await blog.save();

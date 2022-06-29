@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const { userRouter, blogRouter, commentRouter } = require("./routes");
-const { generateFakeData } = require("../faker");
+const { generateFakeData } = require("../faker2");
 const mongoose = require("mongoose");
 
 const MONGO_URI =
@@ -14,7 +14,7 @@ const server = async () => {
       useUnifiedTopology: true,
     });
     mongoose.set("debug", true);
-    // await generateFakeData(100, 10, 300);
+
     console.log("MongoDB conneted");
     app.use(express.json());
 
@@ -22,7 +22,10 @@ const server = async () => {
     app.use("/blog", blogRouter);
     app.use("/blog/:blogId/comment/", commentRouter);
 
-    app.listen(3000, () => console.log("server listening on port 3000"));
+    app.listen(3000, async () => {
+      console.log("server listening on port 3000");
+      await generateFakeData(1, 1, 1);
+    });
   } catch (err) {
     console.log(err);
   }

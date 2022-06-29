@@ -6,6 +6,7 @@ const {
 } = require("mongoose");
 
 const { CommentSchema } = require("./Comment");
+const { UserSchema } = require("./User");
 console.log(CommentSchema);
 
 const BlogSchema = new Schema(
@@ -24,6 +25,7 @@ const BlogSchema = new Schema(
 
     comments: {
       content: { type: String, required: true },
+
       user: { type: ObjectId, required: true, ref: "user" },
       blog: { type: ObjectId, required: true, ref: "blog" },
     },

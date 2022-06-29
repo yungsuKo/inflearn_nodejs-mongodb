@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const { default: mongoose } = require("mongoose");
 const blogRouter = Router();
-const { Blog, User } = require("../models");
+const { Blog, User, Comment } = require("../models");
 const { isValidObjectId } = require("mongoose");
 
 blogRouter.post("/", async (req, res) => {

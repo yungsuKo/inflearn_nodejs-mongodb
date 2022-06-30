@@ -24,10 +24,10 @@ const BlogSchema = new Schema(
     },
 
     comments: {
-      content: { type: String, required: true },
+      content: { type: String },
 
-      user: { type: ObjectId, required: true, ref: "user" },
-      blog: { type: ObjectId, required: true, ref: "blog" },
+      user: { type: ObjectId, ref: "user" },
+      blog: { type: ObjectId, ref: "blog" },
     },
   },
   { timestamps: true }

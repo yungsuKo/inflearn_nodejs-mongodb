@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const { userRouter, blogRouter, commentRouter } = require("./routes");
-const { generateFakeData } = require("../faker2");
+// const { generateFakeData } = require("../faker2");
 const mongoose = require("mongoose");
 
 const MONGO_URI =
@@ -20,11 +20,13 @@ const server = async () => {
 
     app.use("/user", userRouter);
     app.use("/blog", blogRouter);
-    app.use("/blog/:blogId/comment/", commentRouter);
+    app.use("/blog/:blogId/comment", commentRouter);
 
     app.listen(3000, async () => {
       console.log("server listening on port 3000");
-      await generateFakeData(1, 1, 1);
+      // for (let i = 0; i < 20; i++) {
+      //   await generateFakeData(10, 1, 10);
+      // }
     });
   } catch (err) {
     console.log(err);

@@ -10,7 +10,6 @@ const URI = "http://localhost:3000";
 const test = async () => {
   console.time("loading time : ");
   let blogs = await axios.get(URI + "/blog");
-  console.log(blogs.data[0]);
   //   blogs.data = await Promise.all(
   //     blogs.data.map(async (blog) => {
   //       const [res1, res2] = await Promise.all([
@@ -32,6 +31,13 @@ const test = async () => {
 };
 
 const testGroup = async () => {
+  await test();
+  await test();
+  await test();
+  await test();
+  await test();
+  await test();
+  await test();
   await test();
 };
 

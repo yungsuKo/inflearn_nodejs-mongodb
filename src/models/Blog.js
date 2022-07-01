@@ -24,6 +24,7 @@ const BlogSchema = new Schema(
     },
 
     comments: {
+      _id: { type: Types.ObjectId, ref: "Comment" },
       content: { type: String },
 
       user: { type: ObjectId, ref: "user" },
